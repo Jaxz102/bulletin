@@ -24,31 +24,36 @@
                     Sort By
                   </button>
                   <ul class="dropdown-menu" style="position: absolute;">
-                    <li><a class="dropdown-item" href="#">Date (Closest)</a></li>
+                    <li><a class="dropdown-item" href="#" >Date (Closest)</a></li>
                     <li><a class="dropdown-item" href="#">Date (Furthest)</a></li>
-                    <li><a class="dropdown-item" href="#">Name (Ascending)</a></li>
-                    <li><a class="dropdown-item" href="#">Name (Descending)</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('alpha1') }}" >Name (Ascending)</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('alpha2') }}" >Name (Descending)</a></li>
                   </ul>
                   <a style="text-decoration: none; margin-right: 10px;" href="/addevents"><button class="btn btn-warning topcustom" style="width: 150px;">Add an Event</button></a> 
                 
             </div>
         </nav>
 
-        <div class="node" style="margin-top: 120px;" onclick="expand(this)">
-            <h2>Eating Competition</h2>
+        <div> <!-- List of events -->
+            <br>
+            <br>
+            <br>
+            <br>
+            {% for event in eventsdb %}
+            <div class="node" style="margin-top: 25px;" onclick="expand(this)">
+                <h2>{{event[0]}} - {{event[1]}}</h2>
+                <div style="margin-left: 40px;">
+                    <p>{{event[2]}}</p>
+                    <p>{{event[3]}}</p>
+                    <p>{{event[4]}}</p>
+                    <p>{{event[5]}}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+    
 
-        <div class="node" onclick="expand(this)">
-            <h2>Eating Competition</h2>
-        </div>
-
-        <div class="node" onclick="expand(this)">
-            <h2>Eating Competition</h2>
-        </div>
-
-        <div class="node" style="margin-bottom: 50px;" onclick="expand(this)">
-            <h2>Eating Competition</h2>
-        </div>
+    
 
 
 
@@ -76,6 +81,7 @@
 
     </body>
     <footer>
+        <br>
         <a style="text-decoration: none; display: block; margin: auto; margin-left: calc(50% - 50px); margin-bottom: 30px;" href="/login">Admin Sign In</a> 
     </footer>
 </html>
