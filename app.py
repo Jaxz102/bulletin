@@ -122,5 +122,18 @@ def adding():
         proposed.append([name, date, address, description, link, tags])
         return render_template("index.html", eventsdb = sort(events, "date1"))
 
+@app.route("/adminedit", methods = ["POST"])
+def edit():
+    if request.method == "POST":
+        status = request.form["status"]
+        name = request.form["name"]
+        if(status == "accept"):
+            print(name + " is accepted event")
+        elif(status == "reject"):
+            print(name + " is rejected event")
+    
+    return render_template("admin.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

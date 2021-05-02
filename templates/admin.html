@@ -20,10 +20,11 @@
 
         <div style="height: 100px;"></div>
         
-        
-        <div class="node" style="margin-top: 25px; position: relative">
-            <a href="/" style="position: absolute; margin-top: 100px; margin-left: -60px;"><img src="https://img.icons8.com/fluent/96/000000/close-window.png" style="width: 50px;"/></a>
-            <a href="/" style="position: absolute; margin-top: 100px; margin-left: 810px; float: right; display: block;"><img src="https://img.icons8.com/flat-round/64/000000/checkmark.png" style="width: 50px;"/></a>
+
+        <form class="node" action="/adminedit" method="post" name="form" style="margin-top: 25px; position: relative">
+            <button type="submit" name="status" value="accept" style="position: absolute; margin-top: 60px; margin-left: 810px; background: none;"><img src="../static/images/checkmark.png" style="width: 50px;"/></button>
+            <button type="submit" name="status" value="reject" style="position: absolute; margin-top: 140px; margin-left: 810px; background: none;"><img src="../static/images/exit.png" style="width: 50px;"/></button>
+            <input hidden name="name" value="NAME OF EVENT">
             <h2>HIII</h2>
             <div style="margin-left: 40px;">
                 <p>HIII</p>
@@ -31,7 +32,7 @@
                 <p>HIII</p>
                 <p>HIII</p>
             </div>
-        </div>
+        </form>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     </body>
