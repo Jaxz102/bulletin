@@ -1,6 +1,6 @@
 ## Bulletin - Hack at Home 2
 
-[Bulletin Logo](Bullitin.jpg)
+![Bulletin Logo](Bullitin.jpg)
 
 ## Inspiration
 In light of the pandemic, we decided an application that is rooted in community and people would be very useful, especially given that social interaction is severely limited. We believe our idea will allow student/workers/families to destress by getting involved with their community
