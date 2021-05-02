@@ -16,7 +16,6 @@ proposed = [
 ]
 
 def date_str(lst):
-
     dates = []
     for event in lst:
         dates.append(event[1].strftime('%m/%d/%Y %H:%M'))
