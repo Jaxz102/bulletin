@@ -16,7 +16,6 @@ proposed = [
 ]
 
 def date_str(lst):
-
     dates = []
     for event in lst:
         dates.append(event[1].strftime('%m/%d/%Y %H:%M'))
@@ -154,5 +153,10 @@ def edit():
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+#pip3 install virtualenv
+#virtualenv env
+#source env/bin/activate
+#pip3 install flask 
 
     
