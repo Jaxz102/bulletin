@@ -5,10 +5,10 @@ app = Flask(__name__)
 
 # ["Name", "Datetime", "Location", "Description", "Link", "Tags"]
 events = [
-    ["Community BBQ", datetime.datetime(2021, 5, 3, 9, 30), "Address", "Join us on May 3rd for our 25th annual community BBQ!", "Link", "#bbq #barbecue #food"],
-    ["Bicycle Festival", datetime.datetime(2021, 5, 10, 12, 00), "Address", "Description", "Link", "#bike #bicycle #fitness #getactive"],
-    ["Community Swimming", datetime.datetime(2021, 6, 7, 6, 00), "Address", "Description", "Link", "#swimming #pool #cooldown"],
-    ["Art Gallery Exhibit", datetime.datetime(2021, 5, 2, 9, 15), "Address", "Description", "Link", "#art #gallery"]
+    ["Community BBQ", datetime.datetime(2021, 5, 3, 9, 30), "1718 Eglinton Avenue, Toronto", "Join us on May 3rd for our 25th annual community BBQ!", "https://www.eworldtrade.com/events/beach-bbq-amp-brews-festival/", "#bbq #barbecue #food"],
+    ["Bicycle Festival", datetime.datetime(2021, 5, 10, 12, 00), "2454 Craven Place, Medicine Hat", "On May 10, 2021, join the excitement of BikeRide’s giveaway contests! Each month you can win innovative and practical bike accessories. You could even win a brand new bicycle.", "https://www.bikeride.com/giveaways/", "#bike #bicycle #fitness #getactive"],
+    ["Community Swimming", datetime.datetime(2021, 6, 7, 6, 00), "279 Central Pkwy, Malton", "Welcome to Splash Works, our 20-acre premier water park where families can splish, splash and laugh! Splash Works features 17 different water slides and water attractions that are sure to please thrillseekers big and small. ", "https://www.canadaswonderland.com/splash-works", "#swimming #pool #cooldown"],
+    ["Art Gallery Exhibit", datetime.datetime(2021, 5, 2, 9, 15), "14 Elm St 3RD floor, Toronto", "The Ontario Society of Artists (OSA) welcomes Canadian artists to apply to participate in our 148th Annual Open Juried Exhibition of Fine Arts on May 2, 2021. Details of the event will be provided to the artists at the notification date.", "https://ontariosocietyofartists.org/osa-148th-annual-open-juried-art-exhibition/", "#art #gallery"]
 ]
 proposed = [
     ["Community Church Session", datetime.datetime(2021, 6, 3, 9, 30), "Location", "Description", "Link", "#church #god #unity"],
@@ -113,7 +113,7 @@ def adding():
     if request.method == "POST":
         name = request.form.get("name")
         date = datetime.datetime(*[int(v) for v in request.form.get("date").replace('T', '-').replace(':', '-').split('-')])
-        address = request.form.get("address") + request.form.get("city")
+        address = request.form.get("address") + " ," + request.form.get("city")
         link = request.form.get("link")
         tags = request.form.get("tags")
         description = request.form.get("description")
@@ -151,7 +151,7 @@ def edit():
 
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run()
+    app.run(debug=True)
+
 
     
