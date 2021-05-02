@@ -24,8 +24,8 @@
                     Sort By
                   </button>
                   <ul class="dropdown-menu" style="position: absolute;">
-                    <li><a class="dropdown-item" href="#" >Date (Closest)</a></li>
-                    <li><a class="dropdown-item" href="#">Date (Furthest)</a></li>
+                    <li><a class="dropdown-item" href="/date1" >Date (Closest)</a></li>
+                    <li><a class="dropdown-item" href="/date2">Date (Furthest)</a></li>
                     <li><a class="dropdown-item" href="/alpha1" >Name (Ascending)</a></li>
                     <li><a class="dropdown-item" href="/alpha2" >Name (Descending)</a></li>
                   </ul>
@@ -45,8 +45,12 @@
                 <div style="margin-left: 40px;">
                     <p>{{event[2]}}</p>
                     <p>{{event[3]}}</p>
-                    <p>{{event[4]}}</p>
-                    <p>{{event[5]}}</p>
+                    <br>
+                    <p>
+                        {{event[4]}}
+                        <br>
+                        {{event[5]}}
+                    </p>
                 </div>
             </div>
             {% endfor %}
