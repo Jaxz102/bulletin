@@ -11,8 +11,8 @@ events = [
     ["Art Gallery Exhibit", datetime.datetime(2021, 5, 2, 9, 15), "14 Elm St 3RD floor, Toronto", "The Ontario Society of Artists (OSA) welcomes Canadian artists to apply to participate in our 148th Annual Open Juried Exhibition of Fine Arts on May 2, 2021. Details of the event will be provided to the artists at the notification date.", "https://ontariosocietyofartists.org/osa-148th-annual-open-juried-art-exhibition/", "#art #gallery"]
 ]
 proposed = [
-    ["Community Church Session", datetime.datetime(2021, 6, 3, 9, 30), "Location", "Description", "Link", "#church #god #unity"],
-    ["Community Lunch", datetime.datetime(2021, 6, 3, 11, 30), "Location", "Description", "Link", "#lunch #yum #food"]
+    ["Church Session", datetime.datetime(2021, 6, 3, 9, 30), "3777  Baker Street, Owen Sound", "Join in on the worship and community outreach at Toronto Alliance Church (TAC)! We are committed to serving in the downtown community every two months. As a volunteer, you can pray, go downtown to serve a meal, provide food, or give money to go toward TTC bus tokens and fresh fruit.", "https://uachome.org/tac", "#church #god #unity"],
+    ["Community Lunch", datetime.datetime(2021, 6, 3, 11, 30), "2461  Fallon Drive, Stoney Point", "Grace Church invites you to its free monthly community lunch. Join us for a lunch of delicious soup, freshly baked rolls, a drink and dessert. Due to COVID, lunch will be take-out to enjoy in the privacy of your home. Safety protocols in place.", "https://www.toronto.com/events/10300431-991922-free-community-lunch/", "#lunch #yum #food"]
 ]
 
 def date_str(lst):

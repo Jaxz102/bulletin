@@ -16,7 +16,7 @@
     <body style="position: relative;">
         <nav class="navbar navbar-light bg-white align-items-center container-fluid" style="height: 80px; position: fixed; top: 0; z-index: 2;">
             <!-- Navbar content -->
-            <a href="/" style="text-decoration: none; margin-left: 50px;"><h1 class="text-dark">ADMIN PANEL</h1></a>
+            <a href="/" style="text-decoration: none; margin-left: 50px;"><h1 class="text-warning fw-bold">ADMIN PANEL</h1></a>
             <div class="float-md-end me-5">
                 <a style="text-decoration: none; margin-right: 10px;" href="/login"><button class="btn btn-outline-warning topcustom" style="width: 100px;">Logout</button></a> 
             </div>
@@ -34,8 +34,7 @@
             <div style="margin-left: 40px;">
                 <p>{{ event[2] }}</p>
                 <p>{{ event[3] }}</p>
-                <p>{{ event[4] }}</p>
-                <p>{{ event[5] }}</p>
+                <p>{{ event[4] }}<br>{{ event[5] }}</p>
             </div>
         </form>
         {% endfor %}

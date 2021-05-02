@@ -18,7 +18,7 @@
     <body>
         <nav class="navbar navbar-light bg-white align-items-center container-fluid" style="height: 80px; position: fixed; top: 0;">
             <!-- Navbar content -->
-            <a href="/" style="text-decoration: none; margin-left: 50px;"><h1 class="text-dark">EVENTS</h1></a>
+            <a href="/" style="text-decoration: none; margin-left: 50px;"><h1 class="text-warning fw-bolder">BULLETIN 📌</h1></a>
             <div class="float-end me-5" style="position: relative;">
                 <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 50px; width: 120px;">
                     Sort By
@@ -36,18 +36,13 @@
         
     
         <div> <!-- List of events -->
-            <br>
-            <br>
-            <br>
-            <br>
             {% for i in range(lstlen) %}
             <div class="node nodefront" style="margin-top: 25px;" onclick="expand(this)">
                 <h2>{{eventsdb[i][0]}} - {{datelst[i]}}</h2>
                 <div style="margin-left: 40px;">
                     <p>{{eventsdb[i][2]}}</p>
                     <p style="width: 85%">{{eventsdb[i][3]}}</p>
-                    <p>{{eventsdb[i][4]}}</p>
-                    <p style="margin-top: -10px;">{{eventsdb[i][5]}}</p>
+                    <p>{{eventsdb[i][4]}}<br>{{eventsdb[i][5]}}</p>
                    
                 </div>
             </div>
