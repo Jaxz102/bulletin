@@ -7,13 +7,20 @@ app = Flask(__name__)
 events = [
     ["Community BBQ", datetime.datetime(2021, 5, 3, 9, 30), "Address", "Join us on May 3rd for our 25th annual community BBQ!", "Link", "#bbq #barbecue #food"],
     ["Bicycle Festival", datetime.datetime(2021, 5, 10, 12, 00), "Address", "Description", "Link", "#bike #bicycle #fitness #getactive"],
-    ["Community Swimming", datetime.datetime(2021, 6, 7, 6, 00), "Address", "Description", "Link", "#swimming #pool #cooldown"],
-    ["Art Gallery Exhibit", datetime.datetime(2021, 5, 2, 9, 15), "Address", "Description", "Link", "#art #gallery"]
+    ["Community Swimming", datetime.datetime(2021, 6, 7, 18, 00), "Address", "Description", "Link", "#swimming #pool #cooldown"],
+    ["Art Gallery Exhibit", datetime.datetime(2021, 5, 2, 15, 30), "Address", "Description", "Link", "#art #gallery"]
 ]
 proposed = [
     ["Community Church Session", datetime.datetime(2021, 6, 3, 9, 30), "Location", "Description", "Link", "#church #god #unity"],
     ["Community Lunch", datetime.datetime(2021, 6, 3, 11, 30), "Location", "Description", "Link", "#lunch #yum #food"]
 ]
+
+def date_str(lst):
+
+    dates = []
+    for event in lst:
+        dates.append(event[1].strftime('%m/%d/%Y %H:%M'))
+    return dates
 
 # Sorting algo
 def sort(lst, sorttype):
@@ -70,20 +77,20 @@ def sort(lst, sorttype):
 # INDEX
 @app.route("/") #HOME BUTTON PRESSED
 def home():
-    return render_template("index.html", eventsdb = sort(events, "date1"))
+    return render_template("index.html", eventsdb = sort(events, "date1"), datelst = date_str(sort(events, "date1")), lstlen=len(sort(events, "date1")))
 # SORTING MENU
 @app.route("/date1")
 def date1():
-    return render_template("index.html", eventsdb = sort(events, "date1"))
+    return render_template("index.html", eventsdb = sort(events, "date1"), datelst = date_str(sort(events, "date1")), lstlen=len(sort(events, "date1")))
 @app.route("/date2")
 def date2():
-    return render_template("index.html", eventsdb = sort(events, "date2"))
+    return render_template("index.html", eventsdb = sort(events, "date2"), datelst = date_str(sort(events, "date2")), lstlen=len(sort(events, "alpha1")))
 @app.route("/alpha1")
 def alpha1():
-    return render_template("index.html", eventsdb = sort(events, "alpha1"))
+    return render_template("index.html", eventsdb = sort(events, "alpha1"), datelst = date_str(sort(events, "alpha1")), lstlen=len(sort(events, "alpha1")))
 @app.route("/alpha2")
 def alpha2():
-    return render_template("index.html", eventsdb = sort(events, "alpha2"))
+    return render_template("index.html", eventsdb = sort(events, "alpha2"), datelst = date_str(sort(events, "alpha2")), lstlen=len(sort(events, "alpha2")))
 
 # LOGIN
 @app.route("/login") #HOME BUTTON PRESSED
@@ -118,10 +125,9 @@ def adding():
         tags = request.form.get("tags")
         description = request.form.get("description")
 
-        # events.append([name, date, address, description, link, tags])
         proposed.append([name, date, address, description, link, tags])
         print(proposed)
-        return render_template("index.html", eventsdb = sort(events, "date1"))
+        return render_template("index.html", eventsdb = sort(events, "date1"), datelst = date_str(sort(events, "date1")), lstlen=len(sort(events, "date1")))
 
 
 
@@ -130,23 +136,18 @@ def edit():
     if request.method == "POST":
         status = request.form["status"]
         name = request.form["name"]
-
-
         print(name)
+
         if(status == "accept"):
-           
             for i in reversed(range(len(proposed))):
                 if proposed[i][0] == name:
                     events.append(proposed[i])
                     del proposed[i]
-            print(name + " is accepted event")
         elif(status == "reject"):
             for i in reversed(range(len(proposed))):
                 if proposed[i][0] == name:
                     del proposed[i]
-            print(name + " is rejected event")
 
-    
     return render_template("admin.html", proposedevents = proposed)
 
 
