@@ -11,8 +11,8 @@ events = [
     ["Art Gallery Exhibit", datetime.datetime(2021, 5, 2, 9, 15), "Address", "Description", "Link", "#art #gallery"]
 ]
 proposed = [
-    ["Community Lunch", "Datetime", "Location", "Description", "Link", "Tags"],
-    ["Community Church Session", "Datetime", "Location", "Description", "Link", "Tags"]
+    ["Community Church Session", datetime.datetime(2021, 6, 3, 9, 30), "Location", "Description", "Link", "#church #god #unity"],
+    ["Community Lunch", datetime.datetime(2021, 6, 3, 11, 30), "Location", "Description", "Link", "#lunch #yum #food"]
 ]
 
 # Sorting algo
@@ -96,7 +96,7 @@ def admin():
 
     if request.method == "POST":
         if request.form["username"] == "admin" and request.form["password"] == "1234":
-            return render_template("admin.html")
+            return render_template("admin.html", proposedevents = proposed)
         else:
             return render_template("login.html", login_status = "False")
 
@@ -120,20 +120,38 @@ def adding():
 
         # events.append([name, date, address, description, link, tags])
         proposed.append([name, date, address, description, link, tags])
+        print(proposed)
         return render_template("index.html", eventsdb = sort(events, "date1"))
+
+
 
 @app.route("/adminedit", methods = ["POST"])
 def edit():
     if request.method == "POST":
         status = request.form["status"]
         name = request.form["name"]
+
+
+        print(name)
         if(status == "accept"):
+           
+            for i in reversed(range(len(proposed))):
+                if proposed[i][0] == name:
+                    events.append(proposed[i])
+                    del proposed[i]
             print(name + " is accepted event")
         elif(status == "reject"):
+            for i in reversed(range(len(proposed))):
+                if proposed[i][0] == name:
+                    del proposed[i]
             print(name + " is rejected event")
+
     
-    return render_template("admin.html")
+    return render_template("admin.html", proposedevents = proposed)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run()
+
+    
