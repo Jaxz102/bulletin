@@ -22,45 +22,45 @@
         <form class="jotform-form" action="/adding" method="POST" name="" style="margin-top: 50px;">
             <div style="display: flex; margin: auto; width: 60%; justify-content:space-between">
                 <div style="width: 45%;">
-                    <label for="formGroupExampleInput" class="form-label">Event Name</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name of Event" name="name">
+                    <label for="formGroupExampleInput" class="form-label">Name of Event <strong><span style="color: #ff0000">*</span></strong></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name of Event" name="name" required>
                 </div>
                 <div style="width: 45%;">
-                    <label class="form-label">Event Date</label>
-                    <input type="datetime-local" class="form-control" name="date">
-                </div>
-            </div>
-
-            <div style="display: flex; margin: auto; width: 60%; justify-content:space-between; margin-top: 20px;">
-                <div style="width: 45%;">
-                    <label for="formGroupExampleInput" class="form-label">Adress</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Eg. 85 Pickle Road" name="adress">
-                </div>
-                <div style="width: 45%;">
-                    <label for="formGroupExampleInput" class="form-label">City</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City of Event" name="city">
+                    <label class="form-label">Date of Event <strong><span style="color: #ff0000">*</span></strong></label>
+                    <input type="datetime-local" class="form-control" name="date" required>
                 </div>
             </div>
 
             <div style="display: flex; margin: auto; width: 60%; justify-content:space-between; margin-top: 20px;">
                 <div style="width: 45%;">
-                    <label for="formGroupExampleInput" class="form-label">Link</label>
+                    <label for="formGroupExampleInput" class="form-label">Address <strong><span style="color: #ff0000">*</span></strong></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Eg. 123 Pickle Road" name="address" required>
+                </div>
+                <div style="width: 45%;">
+                    <label for="formGroupExampleInput" class="form-label">City <strong><span style="color: #ff0000">*</span></strong></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City of Event" name="city" required>
+                </div>
+            </div>
+
+            <div style="display: flex; margin: auto; width: 60%; justify-content:space-between; margin-top: 20px;">
+                <div style="width: 45%;">
+                    <label for="formGroupExampleInput" class="form-label">Link (Optional)</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Link for the Event" name="link">
                 </div>
                 <div style="width: 45%;">
-                    <label for="formGroupExampleInput" class="form-label">Tags</label>
+                    <label for="formGroupExampleInput" class="form-label">Tags (Optional)</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Hashtags" name="tags">
                 </div>
             </div>
             <div style="height:20px"></div>
             <div style="width: 60%;margin: auto;">
-                <label for="exampleFormControlTextarea1" class="form-label">Event Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Description of the Event..." name="description"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">Event Description <strong><span style="color: #ff0000">*</span></strong></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Description of the Event..." name="description" required></textarea>
             </div>
             
 
             <div style="height:20px"></div>
-
+            <p style="text-align: center;" >Items with a <strong><span style="color: #ff0000">*</span></strong> are required</p>
             <button class="btn btn-lg btn-warning" type="submit" style="width: 60%; display: block; margin: auto;">Submit</button>
             
         </form>
